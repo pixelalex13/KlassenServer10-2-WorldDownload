@@ -109,14 +109,6 @@
             filter: brightness(1.2);
         }
 
-        /* --- Smooth Zoom Animation Before Fullscreen --- */
-        .video-wrapper.fullscreen-zoom {
-            transform: scale(1.25);
-            transition: transform 0.25s ease-out;
-            z-index: 9999;
-            position: relative;
-        }
-
         iframe {
             width: 100%;
             height: auto;
@@ -179,11 +171,11 @@
     <div class="video-container">
         <h2>World-Installation-Tutorials</h2>
 
-        <div class="video-wrapper" onclick="zoomToFullscreen(this)">
+        <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         </div>
 
-        <div class="video-wrapper" onclick="zoomToFullscreen(this)">
+        <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         </div>
     </div>
@@ -191,25 +183,6 @@
     <footer>
         <p>Bei Fragen bitte an Alex wenden.</p>
     </footer>
-
-    <!-- Fullscreen Zoom Script -->
-    <script>
-        function zoomToFullscreen(wrapper) {
-            wrapper.classList.add("fullscreen-zoom");
-
-            setTimeout(() => {
-                wrapper.classList.remove("fullscreen-zoom");
-
-                if (wrapper.requestFullscreen) {
-                    wrapper.requestFullscreen();
-                } else if (wrapper.webkitRequestFullscreen) {
-                    wrapper.webkitRequestFullscreen();
-                } else if (wrapper.msRequestFullscreen) {
-                    wrapper.msRequestFullscreen();
-                }
-            }, 250);
-        }
-    </script>
 
 </body>
 </html>
