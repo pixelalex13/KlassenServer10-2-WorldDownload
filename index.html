@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -6,12 +6,9 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Klassen Server 10-2 (World Downloads)</title>
     <style>
-
         @font-face {
             font-family: "Minecraft";
             src: url("fonts/minecraft.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
         }
 
         body {
@@ -34,21 +31,17 @@
             margin-top: 30px;
         }
 
-        .java-wrapper {
-            position: relative;
-            display: inline-block;
-        }
+        .java-wrapper { position: relative; display: inline-block; }
 
         .icon {
             width: 150px;
             transition: 0.25s;
             cursor: pointer;
             border-radius: 12px;
-            padding: 6px;   
+            padding: 6px;
         }
 
-        .icon:hover,
-        .java-wrapper:hover .icon {
+        .icon:hover, .java-wrapper:hover .icon {
             transform: scale(1.08);
             filter: brightness(1.25);
         }
@@ -57,22 +50,16 @@
             position: absolute;
             bottom: -10px;
             right: -10px;
-
             display: flex;
             flex-direction: row;
             gap: 1px;
-
             opacity: 0;
             transform: scale(0.7) translateY(10px);
             pointer-events: none;
-
-            transition: 
-                opacity 0.25s ease-out,
-                transform 0.25s ease-out;
+            transition: opacity 0.25s ease-out, transform 0.25s ease-out;
         }
 
-        .java-wrapper:hover .java-menu,
-        .java-menu:hover {
+        .java-wrapper:hover .java-menu, .java-menu:hover {
             opacity: 1;
             transform: scale(1) translateY(0);
             pointer-events: auto;
@@ -96,7 +83,7 @@
             display: inline-block;
             margin: 10px;
             border-radius: 12px;
-            padding: 6px;   
+            padding: 6px;
             overflow: hidden;
             transition: transform 0.3s, filter 0.3s;
             cursor: pointer;
@@ -116,27 +103,55 @@
             border-radius: 12px;
         }
 
+        footer { margin-top: 50px; }
+
+        .alex-container { 
+            position: relative; 
+            display: inline-block; 
+        }
+
+        .kadse-button {
+            position: absolute;
+            top: -65px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.7);
+            opacity: 0;
+            
+            pointer-events: auto;
+            display: flex;
+            justify-content: center;
+            transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+        }
+
+        .alex-container:hover .kadse-button,
+        .kadse-button:hover {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        .kadse-button img {
+            width: 60px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .kadse-button img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
         @media (max-width: 600px) {
-            .icon {
-                width: 100%;
-                max-width: 120px;
-            }
-            .java-menu {
-                right: -5px;
-                bottom: -5px;
-            }
-            .mini-btn {
-                width: 50px;
-            }
+            .icon { width: 100%; max-width: 120px; }
+            .java-menu { right: -5px; bottom: -5px; }
+            .mini-btn { width: 50px; }
         }
 
         footer p {
             font-size: 12px;
             color: #aaa;
-            margin-top: 50px;
             text-shadow: 0px 0px 0 #000;
         }
-
     </style>
 </head>
 <body>
@@ -145,17 +160,14 @@
     <p>Klicke die Edition um den jeweiligen World Download zu erhalten.</p>
 
     <div class="icon-grid">
-
         <div class="java-wrapper">
             <a href="https://static.wikia.nocookie.net/glungussy-wussy/images/d/d1/Glungus.jpg" target="_blank">
                 <img src="images/java.png" class="icon" alt="Java Edition">
             </a>
-
             <div class="java-menu">
                 <a href="https://drive.google.com/uc?export=download&id=1EBH9eSZxk0OmrnwZbz6CcF6aFEDaLWfi" target="_blank">
                     <img src="images/modrinth.png" class="mini-btn" alt="Modrinth">
                 </a>
-
                 <a href="https://drive.google.com/uc?export=download&id=1cm-0TwSfe7MhetELKnFqPtfR1-UxZoX_" target="_blank">
                     <img src="images/curseforge.png" class="mini-btn" alt="CurseForge">
                 </a>
@@ -165,24 +177,40 @@
         <a href="https://static.wikia.nocookie.net/glungussy-wussy/images/d/d1/Glungus.jpg" target="_blank">
             <img src="images/bedrock.png" class="icon" alt="Bedrock Edition">
         </a>
-
     </div>
 
     <div class="video-container">
         <h2>World-Installation-Tutorials</h2>
-
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         </div>
-
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         </div>
     </div>
 
     <footer>
-        <p>Bei Fragen bitte an Alex wenden.</p>
+        <p>Bei Fragen bitte an 
+            <span class="alex-container">
+                <span>Alex</span>
+                <span class="kadse-button">
+                    <img src="images/kadse.png" alt="Kadse" id="kadse-button">
+                </span>
+            </span>
+            wenden.
+        </p>
+        <audio id="meow-sound" src="sounds/meow.mp3"></audio>
     </footer>
+
+    <script>
+        const kadseButton = document.getElementById('kadse-button');
+        const meowSound = document.getElementById('meow-sound');
+
+        kadseButton.addEventListener('click', () => {
+            meowSound.currentTime = 0;
+            meowSound.play();
+        });
+    </script>
 
 </body>
 </html>
