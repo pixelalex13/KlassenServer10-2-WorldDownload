@@ -18,7 +18,7 @@
             color: white;
             font-family: "Minecraft", Arial, sans-serif;
             text-align: center;
-            padding: 40px 20px; /* mehr Flexibilität für Handys */
+            padding: 40px 20px;
         }
 
         h1 {
@@ -35,7 +35,6 @@
 
         .icon {
             width: 150px;
-            max-width: 40%; /* passt sich auf kleinen Bildschirmen an */
             transition: 0.25s;
             cursor: pointer;
         }
@@ -57,7 +56,7 @@
             transition: transform 0.3s, filter 0.3s;
             cursor: pointer;
             width: 100%;
-            max-width: 420px; /* Desktop-Grenze */
+            max-width: 420px;
         }
 
         .video-wrapper:hover {
@@ -66,14 +65,13 @@
         }
 
         iframe {
-            width: 100%; /* responsive Breite */
+            width: 100%;
             height: auto;
-            aspect-ratio: 16/9; /* bleibt proportional */
+            aspect-ratio: 16/9;
             border-radius: 12px;
             margin: 0;
         }
 
-        /* Mobile-spezifische Anpassungen */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
@@ -82,7 +80,8 @@
                 gap: 10px;
             }
             .icon {
-                max-width: 80%; /* Icons füllen fast die Breite */
+                width: 80%; /* Icons füllen Handys breit */
+                max-width: none;
             }
             .video-wrapper {
                 margin: 10px 0;
@@ -100,7 +99,7 @@
 <body>
 
     <h1>Klassen Server 10-2 (World Downloads)</h1>
-    <p>Klicke die Version für den jeweiligen World Download.</p>
+    <p>Klicke die Edition um den jeweiligen World Download zu erhalten.</p>
 
     <div class="icon-grid">
 
