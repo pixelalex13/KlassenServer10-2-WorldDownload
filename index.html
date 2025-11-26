@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -23,14 +23,9 @@
             text-shadow: 4px 4px 0 #000;
         }
 
-        h1 {
-            margin-bottom: 20px;
-        }
+        h1 { margin-bottom: 20px; }
+        p { text-shadow: 0px 0px 0 #000; }
 
-        p {
-            text-shadow: 0px 0px 0 #000;
-        }
-        
         .icon-grid {
             display: flex;
             justify-content: center;
@@ -39,25 +34,69 @@
             margin-top: 30px;
         }
 
+        .java-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
         .icon {
             width: 150px;
             transition: 0.25s;
             cursor: pointer;
+            border-radius: 12px;
+            padding: 6px;   
         }
 
-        .icon:hover {
+        .icon:hover,
+        .java-wrapper:hover .icon {
             transform: scale(1.08);
             filter: brightness(1.25);
         }
 
-        .video-container {
-            margin-top: 50px;
+        .java-menu {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            opacity: 0;
+            transform: scale(0.7) translateY(10px);
+            pointer-events: none;
+
+            transition: 
+                opacity 0.25s ease-out,
+                transform 0.25s ease-out;
         }
+
+        .java-wrapper:hover .java-menu,
+        .java-menu:hover {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mini-btn {
+            width: 60px;
+            border-radius: 8px;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .mini-btn:hover {
+            transform: scale(1.12);
+            filter: brightness(1.25);
+        }
+
+        .video-container { margin-top: 50px; }
 
         .video-wrapper {
             display: inline-block;
             margin: 10px;
             border-radius: 12px;
+            padding: 6px;   
             overflow: hidden;
             transition: transform 0.3s, filter 0.3s;
             cursor: pointer;
@@ -75,22 +114,19 @@
             height: auto;
             aspect-ratio: 16/9;
             border-radius: 12px;
-            margin: 0;
         }
 
         @media (max-width: 600px) {
-            body {
-                padding: 20px 10px;
-            }
-            .icon-grid {
-                gap: 10px;
-            }
             .icon {
                 width: 100%;
                 max-width: 120px;
             }
-            .video-wrapper {
-                margin: 10px 0;
+            .java-menu {
+                right: -5px;
+                bottom: -5px;
+            }
+            .mini-btn {
+                width: 50px;
             }
         }
 
@@ -110,18 +146,31 @@
 
     <div class="icon-grid">
 
-        <a href="https://static.wikia.nocookie.net/glungussy-wussy/images/d/d1/Glungus.jpg/revision/latest?cb=20240515204025" target="_blank">
-            <img src="images/java.png" class="icon" alt="Java Edition">
-        </a>
+        <div class="java-wrapper">
+            <a href="https://static.wikia.nocookie.net/glungussy-wussy/images/d/d1/Glungus.jpg" target="_blank">
+                <img src="images/java.png" class="icon" alt="Java Edition">
+            </a>
 
-        <a href="https://static.wikia.nocookie.net/glungussy-wussy/images/d/d1/Glungus.jpg/revision/latest?cb=20240515204025" target="_blank">
+            <div class="java-menu">
+                <a href="https://drive.google.com/1" target="_blank">
+                    <img src="images/mini1.png" class="mini-btn" alt="Mini 1">
+                </a>
+
+                <a href="https://drive.google.com/2" target="_blank">
+                    <img src="images/mini2.png" class="mini-btn" alt="Mini 2">
+                </a>
+            </div>
+        </div>
+
+        <a href="https://static.wikia.nocookie.net/glungussy-wussy/images/d/d1/Glungus.jpg" target="_blank">
             <img src="images/bedrock.png" class="icon" alt="Bedrock Edition">
         </a>
+
     </div>
 
     <div class="video-container">
         <h2>World-Installation-Tutorials</h2>
-        
+
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         </div>
@@ -134,5 +183,6 @@
     <footer>
         <p>Bei Fragen bitte an Alex wenden.</p>
     </footer>
+
 </body>
 </html>
