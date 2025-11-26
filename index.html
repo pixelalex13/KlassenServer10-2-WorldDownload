@@ -48,9 +48,24 @@
             margin-top: 50px;
         }
 
+        /* NEU: Video-Wrapper für Hover-Effekt */
+        .video-wrapper {
+            display: inline-block;
+            margin: 10px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, filter 0.3s;
+            cursor: pointer;
+        }
+
+        .video-wrapper:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
         iframe {
             border-radius: 12px;
-            margin: 10px;
+            margin: 0; /* Video-Wrapper übernimmt jetzt den Abstand */
         }
     </style>
 </head>
@@ -81,14 +96,18 @@
         <h2>Installations-Tutorials</h2>
 
         <!-- Video 1 -->
-        <iframe width="420" height="236"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                allowfullscreen></iframe>
+        <div class="video-wrapper">
+            <iframe width="420" height="236"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    allowfullscreen></iframe>
+        </div>
 
         <!-- Video 2 -->
-        <iframe width="420" height="236"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                allowfullscreen></iframe>
+        <div class="video-wrapper">
+            <iframe width="420" height="236"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    allowfullscreen></iframe>
+        </div>
     </div>
 
 </body>
