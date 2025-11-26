@@ -1,1 +1,87 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Minecraft World Downloads</title>
+    <style>
+        body {
+            background: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .icon-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .icon {
+            width: 150px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .icon:hover {
+            transform: scale(1.08);
+            filter: brightness(1.25);
+        }
+
+        .video-container {
+            margin-top: 50px;
+        }
+
+        iframe {
+            border-radius: 12px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Minecraft Welt-Downloads</h1>
+    <p>Klicke auf eine Welt, um sie herunterzuladen.</p>
+
+    <div class="icon-grid">
+
+        <!-- Java Edition -->
+        <a href="https://iamcal.github.io/enchant-order/" target="_blank">
+            <img src="images/java.png" class="icon" alt="Java Edition">
+        </a>
+
+        <!-- Bedrock Overworld -->
+        <a href="https://www.birdflop.com/resources/rgb/" target="_blank">
+            <img src="images/overworld.png" class="icon" alt="Bedrock Overworld">
+        </a>
+
+        <!-- Bedrock Nether + End -->
+        <a href="https://m.streetcat.wiki/index.php/Main_Page" target="_blank">
+            <img src="images/nether.png" class="icon" alt="Bedrock Nether & End">
+        </a>
+    </div>
+
+    <div class="video-container">
+        <h2>Installations-Tutorials</h2>
+
+        <!-- Video 1 -->
+        <iframe width="420" height="236"
+                src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                allowfullscreen></iframe>
+
+        <!-- Video 2 -->
+        <iframe width="420" height="236"
+                src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                allowfullscreen></iframe>
+    </div>
+
+</body>
+</html>
